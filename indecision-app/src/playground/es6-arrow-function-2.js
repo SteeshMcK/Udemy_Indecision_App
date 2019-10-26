@@ -1,15 +1,13 @@
-"use strict";
-
 // arguments object - no longer bound with arrow functions
 
-var add = function add(a, b) {
+const add = function(a, b) {
     console.log(arguments);
     return a + b;
 };
 
 console.log(add(55, 1, 1001));
 
-var addArrowFunction = function addArrowFunction(a, b) {
+const addArrowFunction = (a, b) => {
     // console.log(arguments);
     return a + b;
 };
@@ -18,21 +16,17 @@ console.log(addArrowFunction(25, 78));
 
 // *this* keyword - no longer bound
 
-var user = {
+const user = {
     name: "Stesha",
-    cities: ["Santa Rosa", "Honolulu", "Santa Monica"],
+    cities: [ "Santa Rosa", "Honolulu", "Santa Monica"],
     // es6 method-definition syntax
-    printPLacesLived: function printPLacesLived() {
-        var _this = this;
-
+    printPLacesLived() {
         //for each returns three statements
         // this.cities.forEach((city) => {
         //     console.log(this.name + " has lived in " + city);
         // });
         // map returns an updated array
-        return this.cities.map(function (city) {
-            return _this.name + " has lived in " + city;
-        });
+        return this.cities.map((city) => this.name + " has lived in " + city);
     }
 };
 
