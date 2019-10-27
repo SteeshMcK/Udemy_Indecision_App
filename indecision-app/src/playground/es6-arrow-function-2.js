@@ -31,3 +31,13 @@ const user = {
 };
 
 console.log(user.printPLacesLived());
+
+const multiplier = {
+    numbers: [ 13, 15, 17, 19, 21],
+    multiplyBy: 4,
+    multiply() {
+        return this.numbers.map((int) => this.multiplyBy * int);
+    }
+};
+
+console.log(multiplier.multiply());

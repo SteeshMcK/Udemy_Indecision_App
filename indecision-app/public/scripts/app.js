@@ -37,3 +37,17 @@ var user = {
 };
 
 console.log(user.printPLacesLived());
+
+var multiplier = {
+    numbers: [13, 15, 17, 19, 21],
+    multiplyBy: 4,
+    multiply: function multiply() {
+        var _this2 = this;
+
+        return this.numbers.map(function (int) {
+            return _this2.multiplyBy * int;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
