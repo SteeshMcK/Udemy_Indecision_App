@@ -2,90 +2,41 @@
 
 console.log("App.js is running!");
 
-// JSX -- JavaScript XML
+var visibility = false;
 
-var app = {
-    title: "Indecision App",
-    subtitle: "The App that can't make up its mind!",
-    options: []
-};
-
-var onMakeDecision = function onMakeDecision() {
-    var randomNum = Math.floor(Math.random() * app.options.length);
-    var option = app.options[randomNum];
-    alert(option);
-};
-
-var remove = function remove() {
-    app.options = [];
-    renderFormApp();
-};
-
-var onFormSubmit = function onFormSubmit(e) {
-    e.preventDefault();
-    var option = e.target.elements.option.value;
-    console.log(e.target.elements);
-    if (option) {
-        app.options.push(option);
-        e.target.elements.option.value = '';
-        renderFormApp();
-    }
+var showIt = function showIt() {
+    // Define visibility as the opposite of what it was.
+    visibility = !visibility;
+    renderTemplateThree();
 };
 
 var appRoot = document.getElementById("app");
 
-var renderFormApp = function renderFormApp() {
-    var template = React.createElement(
+var renderTemplateThree = function renderTemplateThree() {
+    var templateThree = React.createElement(
         "div",
         null,
         React.createElement(
             "h1",
             null,
-            app.title
-        ),
-        app.subtitle && React.createElement(
-            "p",
-            null,
-            app.subtitle
-        ),
-        React.createElement(
-            "p",
-            null,
-            app.options.length > 0 ? "Here are your options" : "No options"
+            "Visibility Toggle"
         ),
         React.createElement(
             "button",
-            { disabled: app.options.length === 0, onClick: onMakeDecision },
-            "What should I do?"
+            { onClick: showIt },
+            visibility ? 'Hide details' : 'Show Details'
         ),
-        React.createElement(
-            "button",
-            { onClick: remove },
-            "Remove All"
-        ),
-        React.createElement(
-            "ol",
+        visibility && React.createElement(
+            "div",
             null,
-            app.options.map(function (item) {
-                return React.createElement(
-                    "li",
-                    { key: item },
-                    item
-                );
-            })
-        ),
-        React.createElement(
-            "form",
-            { onSubmit: onFormSubmit },
-            React.createElement("input", { type: "text", name: "option" }),
             React.createElement(
-                "button",
+                "p",
                 null,
-                "Add Option"
+                "Hey! This neat-o thing works!"
             )
         )
     );
-    ReactDOM.render(template, appRoot);
+    ReactDOM.render(templateThree, appRoot);
 };
 
-renderFormApp();
+renderTemplateThree();
