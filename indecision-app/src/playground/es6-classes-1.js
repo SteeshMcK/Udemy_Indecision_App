@@ -12,10 +12,17 @@ class Person {
     }
 }
 
-const me = new Person('Stesha McKindle', 50);
-console.log(me.getGreeting());
-console.log(me.getDescription());
+class Student extends Person {
+    constructor(name, age, major) {
+        super(name, age);
+        this.major = major;
+    }
+}
+
+const me = new Person('Stesha McKindle', 50, 'History');
+console.log(me);
+
 
 const other = new Person();
-console.log(other.getGreeting());
-console.log(other.getDescription());
+console.log(other);
+
