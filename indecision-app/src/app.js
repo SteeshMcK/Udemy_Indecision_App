@@ -1,58 +1,61 @@
-console.log("App.js is running!");
-
-
-// JSX -- JavaScript XML
-
-const app = {
-    title: "Indecision App",
-    subtitle: "The App that can't make up its mind!",
-    options: []
-};
-
-const onMakeDecision = () => {
-    const randomNum = Math.floor(Math.random() * app.options.length);
-    const option = app.options[randomNum];
-    alert(option);
-};
-
-const remove = () => {
-    app.options = [];
-    renderFormApp();
-};
-
-const onFormSubmit = (e) => {
-    e.preventDefault();
-    const option = e.target.elements.option.value;
-    console.log(e.target.elements);
-    if (option) {
-        app.options.push(option);
-        e.target.elements.option.value = '';
-        renderFormApp();
-    }
-};
-
-const appRoot = document.getElementById("app");
-
-const renderFormApp = () => {
-    const template = (
+class Header extends React.Component {
+    render() {
+        return (
         <div>
-            <h1>{app.title}</h1>
-            {app.subtitle && <p>{app.subtitle}</p>}
-            <p>{app.options.length > 0 ? "Here are your options" : "No options" }</p> 
-            <button disabled = {app.options.length === 0} onClick={onMakeDecision}>What should I do?</button>
-            <button onClick={remove}>Remove All</button>
-            <ol>
-                {
-                    app.options.map((item) => <li key={item}>{item}</li>)
-                }
-            </ol>
-            <form onSubmit={onFormSubmit}>
-                <input type="text" name="option" />
-                <button>Add Option</button>
-            </form>
+            <h1>Indecision</h1>
+            <h2>Put your life in the hands of a computer.</h2>
         </div>
-    );
-    ReactDOM.render(template, appRoot);
+        );
+    }
 }
 
-renderFormApp();
+class Action extends React.Component {
+    render() {
+        return (
+            <div>
+                <button>What should I do?</button>
+            </div>
+        );
+    }
+}
+
+class Options extends React.Component {
+    render() {
+        return (
+            <div>
+                <ul>
+                    <li>Sleep</li>
+                    <li>Read</li>
+                    <li>Code</li>
+                    <li>Sew</li>
+                    <li>Knit</li>
+                    <li>Write</li>
+                </ul>
+            </div>
+        );
+    }
+}
+
+class AddOption extends React.Component {
+    render() {
+        return (
+            <div>
+                <form>
+                    <input type="text" name="option" value="What is your pleasure?" readOnly></input>
+                </form>
+            </div>
+        );
+    }
+}
+
+const jsx = (
+    <div>
+        <Header />
+        <Action />
+        <Options />
+        <AddOption />
+
+    </div>
+);
+    
+ReactDOM.render(jsx, document.getElementById('app'));
