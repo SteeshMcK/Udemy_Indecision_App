@@ -222,11 +222,11 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n// import subtract, {square, add} from './utils.js';\r\n// import isSenior, {isAdult, canDrink} from './person.js';\r\n// import validator from 'validator';\r\n\r\n\r\n\r\nconsole.log('app.js is running!!');\r\n\r\n// console.log(square(10));\r\n// console.log(add(35, 45));\r\n// console.log(subtract(451, 65));\r\n\r\n// console.log(isAdult(51));\r\n// console.log(canDrink(51));\r\n// console.log(isSenior(51));\r\n\r\n// console.log(validator.isEmail('cleodecarabas@yahoo.com'));\r\n\r\nconst template = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('p', {}, 'Testing one, two, three...');\r\nreact_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(template, document.getElementById('app'));\r\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import subtract, {square, add} from './utils.js';\n// import isSenior, {isAdult, canDrink} from './person.js';\n// import validator from 'validator';\nconsole.log('app.js is running!!');\n\n// console.log(square(10));\n// console.log(add(35, 45));\n// console.log(subtract(451, 65));\n\n// console.log(isAdult(51));\n// console.log(canDrink(51));\n// console.log(isSenior(51));\n\n// console.log(validator.isEmail('cleodecarabas@yahoo.com'));\n\nvar template = _react2.default.createElement(\n  'p',\n  null,\n  'THIS IS JSX FROM WEBPACK!'\n);\n_reactDom2.default.render(template, document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

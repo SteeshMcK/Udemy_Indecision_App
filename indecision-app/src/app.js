@@ -16,5 +16,5 @@ console.log('app.js is running!!');
 
 // console.log(validator.isEmail('cleodecarabas@yahoo.com'));
 
-const template = React.createElement('p', {}, 'Testing one, two, three...');
+const template = <p>THIS IS JSX FROM WEBPACK!</p>;
 ReactDOM.render(template, document.getElementById('app'));
